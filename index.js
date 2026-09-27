@@ -1,15 +1,30 @@
-import abc from "express";
-import home, { about } from "./pages/home.js";  
-const app=abc();
+ import abc from "express";
+ const app= abc();
 
-app.get("",(req,resp)=>{
-    // resp.send("<title>Sandip das</title>");
-    resp.send(home());
-});
+ app.get("",(req,resp)=>{
+    resp.send(`<h1>This is Home Page</h1>
+        <br>
+        <a href="/login">go to login</a>
+        `);
+ });
 
-app.get("/about",(req,resp)=>{
-    // resp.send("<title>Sandip das</title>");
-    resp.send(about());
-});
+ app.get("/login",(req,resp)=>{
+    resp.send(`<form action="/submit" method="post">
+        <input type="text">
+        <br><br>
+        <input type="text">
+        <br><br>
+        <button>submit</button>
+        </form>
+        <a href="/">go to Home</a>
+        `);
+ });
 
-app.listen(2000)
+ app.post("/submit",(req,resp)=>{
+    resp.send(`<h1>The from is Submited</h1>
+        <a href="/">go to Home</a>`);
+ });
+
+
+
+ app.listen(100);
