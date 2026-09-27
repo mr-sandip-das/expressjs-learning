@@ -1,15 +1,15 @@
-const ex=require("express");
-const app=ex()
+import abc from "express";
+import home, { about } from "./pages/home.js";  
+const app=abc();
+
 app.get("",(req,resp)=>{
-resp.send("<h1>This is Home Page</h1>");
+    // resp.send("<title>Sandip das</title>");
+    resp.send(home());
 });
 
-app.get("/about/",(req,resp)=>{
-resp.send("<h1>This is About Page</h1>");
+app.get("/about",(req,resp)=>{
+    // resp.send("<title>Sandip das</title>");
+    resp.send(about());
 });
 
-app.get("/contact",(req,resp)=>{
-resp.send("<h1>This is Contact Page</h1>");
-});
-
-app.listen(2000);
+app.listen(2000)
