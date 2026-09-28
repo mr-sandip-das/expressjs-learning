@@ -1,30 +1,25 @@
- import abc from "express";
- const app= abc();
 
- app.get("",(req,resp)=>{
-    resp.send(`<h1>This is Home Page</h1>
-        <br>
-        <a href="/login">go to login</a>
-        `);
- });
+import express from "express";
+import path from "path";
 
- app.get("/login",(req,resp)=>{
-    resp.send(`<form action="/submit" method="post">
-        <input type="text">
-        <br><br>
-        <input type="text">
-        <br><br>
-        <button>submit</button>
-        </form>
-        <a href="/">go to Home</a>
-        `);
- });
+const app=express();
 
- app.post("/submit",(req,resp)=>{
-    resp.send(`<h1>The from is Submited</h1>
-        <a href="/">go to Home</a>`);
- });
+app.get("/",(req,resp)=>{
+let absPath=path.resolve("view/home.html");
+console.log(absPath);
+resp.sendFile(absPath);
+});
 
+app.get("/login",(req,resp)=>{
+let absPath=path.resolve("view/login.html");
+console.log(absPath);
+resp.sendFile(absPath);
+});
 
+app.get("/about",(req,resp)=>{
+let absPath=path.resolve("view/about.html");   
+console.log(absPath);
+resp.sendFile(absPath);
+});
 
- app.listen(100);
+app.listen(2000)
