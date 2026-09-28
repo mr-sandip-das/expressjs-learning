@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .error-code {
+            font-size: 150px;
+            font-weight: 800;
+            line-height: 1;
+            color: #2563eb;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .error-code {
+                font-size: 100px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="error-container">
+
+        <div class="error-code">404</div>
+
+        <h1>Page Not Found</h1>
+
+        <p>
+            Sorry, the page you are looking for doesn't exist.
+        </p>
+
+        <a href="/" class="home-btn">
+            Go Back Home
+        </a>
+
+    </div>
+
+</body>
+</html>
