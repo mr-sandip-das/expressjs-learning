@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user</title>
 </head>
-<body><ul>
-    <% 
-    if(status){
-    for(i=0;i<arr.length;i++){ %>
-        <li><%= arr[i] %></li>
-    <% } } else{ %>
-        <h1>now array is empty</h1>
-        <% } %>
+<body>
+    <ul>
+        <%
+        for(i=0;i<userData.length;i++){ %>
+         <h1><%= userData[i] %></h1>
+        <%
+        }
+        %>
     </ul>
 </body>
 </html>
