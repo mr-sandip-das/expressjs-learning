@@ -1,10 +1,22 @@
 import express from "express";
+
 const app=express();
 
 app.set("view engine","ejs");
+app.use(express.urlencoded({extended:false}));
 
-app.get("/",(req,resp)=>{
-    resp.render("home",{name:"sandip das",email:"sandip@gmail.com"});
+app.get("/from",(req,resp)=>{
+resp.render("from");
 });
 
-app.listen(2000)
+app.post("/submit",(req,resp)=>{
+resp.render("showdata",req.body);
+});
+
+app.get("/user",(req,resp)=>{
+ let arr=["Sandip das","ankan bar","avinandan patra"];
+ resp.render("user",{arr:arr,status:true});
+});
+
+
+app.listen(2000);
