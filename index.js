@@ -1,13 +1,20 @@
 import express from "express";
-import { userController } from "./controller/userController.js";
 
 const app=express();
 
-app.set("view engine","ejs");
-app.get("/user",userController);
+app.get("/",(req,resp)=>{
+    let user=["Sandip","Anita","Rajdeep"];
+    let data="<ul>";
+    for(let i=0;i<user.length;i++){
+        data+=`<a href="user/${user[i]}"><li>${user[i]}</li></a>`;
+    }
+    data+="</ul>"
+    resp.send(data);
+});
 
-// app.use((err,req,resp,next)=>{
-//  resp.send("Try After some time");
-// });
+app.get("/user/:name",(req,resp)=>{
+console.log(req.params.name);
+resp.send(`This Page Name Is : ${req.params.name}`);
+});
 
 app.listen(2000);
