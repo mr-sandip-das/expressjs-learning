@@ -6,9 +6,6 @@ const dbName="college";
 const url="mongodb://localhost:27017";
 const clint=new MongoClient(url);
 
-
-
-
 app.get("/api",async (req,resp)=>{
 
     await clint.connect();
@@ -31,4 +28,4 @@ app.get("/ui",async (req,resp)=>{
  
 });
 
-app.listen(2000);
+app.listen(3000);
