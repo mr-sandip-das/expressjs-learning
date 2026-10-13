@@ -14,6 +14,7 @@
             <td>Name</td>
             <td>Age</td>
             <td>Email</td>
+            <td>Delete</td>
         </tr>
 
         
@@ -22,6 +23,7 @@
                 <td><%=  value.name %></td>
                 <td><%=  value.age %></td>
                 <td><%=  value.email %></td>
+                <td><a href="ui/delete/<%=  value._id %>">delete</a></td>
                 </tr>
                 <% }); %>
 
