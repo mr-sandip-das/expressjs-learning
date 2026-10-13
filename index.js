@@ -30,4 +30,25 @@ app.post("/add-user", async (req,resp)=>{
     
 });
 
+app.use(express.json());
+
+app.post("/add-api",async (req,resp)=>{
+    const {name,email,age}=req.body;
+    if(!name || !email || !age){
+        resp.send({
+            "meassage":"data insert Faild",
+            "sucess":false
+        })
+        return false;
+    }
+
+    const collection=db.collection("students");
+    const result=await collection.insertOne(req.body);
+resp.send({
+    "message":"data is done",
+    "data":req.body,
+    "database-return":result
+});
+});
+
 app.listen(2000);
